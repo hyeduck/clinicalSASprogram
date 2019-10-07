@@ -101,7 +101,7 @@ proc sort data=All_IA_Pages ; by sitenumber subject folderseq instancename datap
 
 
 
-PROC IMPORT OUT=Audit DATAFILE= "\\10.2.1.25\sas data\DC\Individual Folder\HyeWon Jung\09 Report\Inactivation Report.xlsx" DBMS=xlsx REPLACE; GETNAMES=YES; DATAROW=2; RUN;
+PROC IMPORT OUT=Audit DATAFILE= "fromlibrary\Inactivation Report.xlsx" DBMS=xlsx REPLACE; GETNAMES=YES; DATAROW=2; RUN;
 proc sort data=audit  ;by site subject folder form ; run;
 
 *****************************;
@@ -195,7 +195,7 @@ proc sql noprint ;
 %put &sbj_count;
 
 
-%let filepath=\\10.2.1.25\SAS Data\DC\Individual Folder\HyeWon Jung\12 Inactivation\CTP1034_InactivatedReport_&DATE._&sbjno..rtf;
+%let filepath=outlibrary\CTP1034_InactivatedReport_&DATE._&sbjno..rtf;
 %macro sbj_listing(sbj_count);
 
 
@@ -226,7 +226,7 @@ options bottommargin = 0.1cm
 
 
 title1 height=9pt justify=left "Report ";
-title2 height=9pt justify=left "Protocol: CT-P10 3.4" justify=right "Page ^{thispage} of ^{lastpage}";
+title2 height=9pt justify=left "Protocol: ##" justify=right "Page ^{thispage} of ^{lastpage}";
 title3 '^S={font=("arial",9pt) just = Center}' "Inactivation Page Listing";
 title4 '^S={font=("arial",9pt) just = Center}' "Subject Number: #byval(Subject)";
 title5 '^S={font=("arial",9pt) just = left}' "Folder / Data Page: #byval(Instancename) / #byval(datapagename)";

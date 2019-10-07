@@ -19,7 +19,7 @@ options compress=yes;
 /*HyeWon Jung*/
 %let datasets=library\datasets;
 %let filepath=library2\&TLF..rtf;
-%include "\\10.2.1.25\SAS Data\DC\Individual Folder\HyeWon Jung\ODS_MACRO.sas";
+%include "fromlibrary\ODS_MACRO.sas";
 
 libname adata "&datasets";
 
@@ -190,7 +190,7 @@ run;
 *********************;
 %odsout;
  title1 font="arial" height=9pt justify=left "Report." ; 
- title2 font="arial" height=9pt justify=left "Protocol: CT-P10 3.2" justify=right "Page ^{pageof}";
+ title2 font="arial" height=9pt justify=left "Protocol: ##" justify=right "Page ^{pageof}";
  title3 '^S={font=("arial",9pt) just = center}' 'Table 14.2.4.2';
  title4 '^S={font=("arial",9pt) just = center}' 'Analysis of Change from Baseline of DAS28 (ANCOVA) ';
  title5 '^S={font=("arial",9pt) just = center}' 'All-Randomized Population - Antibody Negative Subset';
